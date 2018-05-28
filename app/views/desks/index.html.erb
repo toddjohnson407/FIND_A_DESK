@@ -1,0 +1,4 @@
+<% @desks.each do |desk| %>
+  <p> <%= desk.name %></p>
+  <%= link_to "View this desk", desk_path(desk)%>
+<% end %>
