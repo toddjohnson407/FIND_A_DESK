@@ -1,8 +1,12 @@
 class DesksController < ApplicationController
   before_action :set_desk, only: [:show, :edit, :update, :destroy]
 
+  def current_index
+    @desks = policy_scope(Desk).order(created_at: :desc)
+  end
+
   def index
-    @desks = Desk.all
+    @desks = policy_scope(Desk).order(created_at: :desc)
   end
 
   def show
@@ -43,8 +47,10 @@ class DesksController < ApplicationController
 
   private
     # Use callbacks to share common setup or constraints between actions.
+
   def set_desk
     @desk = Desk.find(params[:id])
+    authorize @desk
   end
 
   def desk_params

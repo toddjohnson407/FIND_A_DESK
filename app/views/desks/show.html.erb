@@ -12,8 +12,12 @@
       <a class="card-link" <%= link_to "", desk_path(@desk)%> </a>
     </div>
     <div class="text-center" style="margin-top: 6vh;">
-      <%= link_to "Remove this Desk", @desk, class: "btn-treehouse", method: :delete, data: { confirm: 'Are you sure?' } %>
-      <%= link_to "Edit this Desk", edit_desk_path(@desk), class: "btn-treehouse" %>
+      <% if policy(@desk).destroy? %>
+        <%= link_to "Remove this Desk", @desk, class: "btn-treehouse", method: :delete, data: { confirm: 'Are you sure?' } %>
+      <% end %>
+      <% if policy(@desk).edit? %>
+        <%= link_to "Edit this Desk", edit_desk_path(@desk), class: "btn-treehouse" %>
+      <% end %>
     </div>
   </div>
 </div>
