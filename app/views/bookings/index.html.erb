@@ -1,0 +1,5 @@
+<%= @bookings.inspect %>
+<% @bookings.each do |booking| %>
+  <%=  booking.user_id %>
+  <%= booking.desk_id %>
+<% end %>

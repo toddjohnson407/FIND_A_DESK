@@ -1,4 +1,4 @@
 class Booking < ApplicationRecord
-  has_one :user
-  has_one :desk
+  belongs_to :user
+  belongs_to :desk
 end

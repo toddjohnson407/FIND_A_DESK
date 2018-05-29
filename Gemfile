@@ -1,6 +1,7 @@
 source 'https://rubygems.org'
 ruby '2.4.4'
 
+
 gem 'pundit'
 gem 'carrierwave', '~> 1.2'
 gem 'cloudinary'
@@ -20,6 +21,7 @@ gem 'sass-rails'
 gem 'simple_form'
 gem 'uglifier'
 gem 'webpacker'
+gem 'simple_form'
 
 group :development do
   gem 'web-console', '>= 3.3.0'

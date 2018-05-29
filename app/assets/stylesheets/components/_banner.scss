@@ -5,7 +5,6 @@
   color: white;
   text-align: center;
   height: 100vh;
-  /* if you have a 70px navbar => height: calc(100vh - 70px); */
   background-size: cover !important;
   display: flex;
   align-items: center;
@@ -24,12 +23,26 @@
   margin-bottom: 30px;
 }
 
+.home-form {
+  width: 500px;
+
+}
+
 form {
+  margin: 60px auto;
+  position: relative;
+  .fa-search {
+    position: absolute;
+    right: 86px;
+    top: 10px;
+  }
+}
+
+#submit_address {
   width: 500px;
   margin: 60px auto;
   position: relative;
-}
-.searchbox {
+  background-color: transparent;
   width: 350px;
   background: transparent;
   outline: 0;
@@ -37,16 +50,20 @@ form {
   border-bottom: 2px solid #11b983;
   border-radius: 5%;
   color: white;
+  transition: 300ms;
+  box-shadow: none;
+  &:focus {
+    outline: none;
+    box-shadow: none;
+    border: none;
+    border-bottom: 2px solid yellow;
+  }
 }
+
 ::placeholder {
   color: rgb(212, 216, 215);
 }
 
 .searchbutton {
  display:none;
-}
-.fa-search {
-  position:absolute;
-  right:77px;
-  color: white;
 }
