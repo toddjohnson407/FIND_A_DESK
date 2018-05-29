@@ -5,7 +5,6 @@
   color: white;
   text-align: center;
   height: 100vh;
-  /* if you have a 70px navbar => height: calc(100vh - 70px); */
   background-size: cover !important;
   display: flex;
   align-items: center;
@@ -23,7 +22,6 @@
   opacity: 0.6;
   margin-bottom: 30px;
 }
-
 form {
   width: 500px;
   margin: 60px auto;
@@ -34,17 +32,8 @@ form {
     top: 10px;
   }
 }
-.searchbox {
-  width: 350px;
-  background: transparent;
-  outline: 0;
-  border: 0;
-  border-bottom: 2px solid #11b983;
-  border-radius: 5%;
-  color: white;
-}
 
-.form-control {
+#submit_address {
   width: 500px;
   margin: 60px auto;
   position: relative;
