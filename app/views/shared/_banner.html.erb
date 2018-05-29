@@ -2,15 +2,17 @@
   <div class="banner-content">
     <h1>Find a Desk</h1>
     <p>Get a place to work anywhere, any time.</p>
-    <form>
-      <input class= "searchbox" type="text" placeholder="Where?" required>
-      <i class="fas fa-search"></i>
-      <input class= "searchbutton" type="button" value="Search">
-    </form>
+
+
+
+
+
     <%= simple_form_for :submit, url: desks_path, :method => :get do |f| %>
-      <%= f.input :address, class: 'searchbox', type: 'text', placeholder: 'Where?', required: true %>
-      <i class="fas fa-search"></i>
-      <%= f.button :submit, class: 'searchbutton', type: 'button', value: 'search' %>
+      <%= f.input :address, class: "searchbox", type: "text", placeholder: "Where?", required: true, label: false %>
+      <i class= "fas fa-search"></i>
+      <%= f.button :submit, class: "searchbutton", type: "button", value: "search" %>
     <% end %>
+
+
   </div>
 </div>
