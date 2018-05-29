@@ -2,7 +2,12 @@
   <div class="banner-content">
     <h1>Find a Desk</h1>
     <p>Get a place to work anywhere, any time.</p>
-    <%= link_to "All Desks", desks_path, class: "btn-treehouse btn-lg" %>
+    <form>
+      <input class= "searchbox" type="text" placeholder="Where?" required>
+      <i class="fas fa-search"></i>
+      <input class= "searchbutton" type="button" value="Search">
+    </form>
+    <a class="btn btn-primary btn-lg">Start now</a>
   </div>
 </div>
 
