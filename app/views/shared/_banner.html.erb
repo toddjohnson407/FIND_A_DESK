@@ -7,7 +7,7 @@
 
 
 
-    <%= simple_form_for :submit, url: desks_path, :method => :get do |f| %>
+    <%= simple_form_for :submit, url: desks_path, class: 'home-form', :method => :get do |f| %>
       <%= f.input :address, class: "searchbox", type: "text", placeholder: "Where?", required: true, label: false %>
       <i class= "fas fa-search"></i>
       <%= f.button :submit, class: "searchbutton", type: "button", value: "search" %>
