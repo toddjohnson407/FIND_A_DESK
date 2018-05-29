@@ -1,21 +1,25 @@
 
 <div class="container" style="margin-top: 2vh;">
-  <h1 class="text-center" style="margin-bottom: 4vh;">All Desks</h1>
-  <div class="row">
-    <% @desks.each do |desk| %>
-      <div class="col-xs-12 col-sm-4">
-        <div class="card" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.2)), url('<%= cl_image_path desk.photo %>');">
-          <div class="card-category"></div>
-          <div class="card-description">
-            <h2><%= desk.name %></h2>
-            <p><%= desk.description %></p>
-            <p>$ <%= desk.price %></p>
-            <p><%= desk.address %></p>
+  <% if @desks.empty? %>
+    <h2>Unfortunately there are no desks available in your area.</h2>
+  <% else %>
+    <h1 class="text-center" style="margin-bottom: 4vh;">Desk Results</h1>
+    <div class="row">
+      <% @desks.each do |desk| %>
+        <div class="col-xs-12 col-sm-4">
+          <div class="card" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.2)), url('<%= cl_image_path desk.photo %>');">
+            <div class="card-category"></div>
+            <div class="card-description">
+              <h2><%= desk.name %></h2>
+              <p><%= desk.description %></p>
+              <p>$ <%= desk.price %></p>
+              <p><%= desk.address %></p>
+            </div>
+            <img class="card-user" src="https://kitt.lewagon.com/placeholder/users/tgenaitay">
+            <a class="card-link" <%= link_to "", desk_path(desk)%> </a>
           </div>
-          <img class="card-user" src="https://kitt.lewagon.com/placeholder/users/tgenaitay">
-          <a class="card-link" <%= link_to "", desk_path(desk)%> </a>
         </div>
-      </div>
+      <% end %>
     <% end %>
   </div>
 </div>

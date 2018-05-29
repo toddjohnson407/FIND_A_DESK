@@ -28,6 +28,11 @@ form {
   width: 500px;
   margin: 60px auto;
   position: relative;
+  .fa-search {
+    position: absolute;
+    right: 86px;
+    top: 10px;
+  }
 }
 .searchbox {
   width: 350px;
@@ -38,15 +43,33 @@ form {
   border-radius: 5%;
   color: white;
 }
+
+.form-control {
+  width: 500px;
+  margin: 60px auto;
+  position: relative;
+  background-color: transparent;
+  width: 350px;
+  background: transparent;
+  outline: 0;
+  border: 0;
+  border-bottom: 2px solid #11b983;
+  border-radius: 5%;
+  color: white;
+  transition: 300ms;
+  box-shadow: none;
+  &:focus {
+    outline: none;
+    box-shadow: none;
+    border: none;
+    border-bottom: 2px solid yellow;
+  }
+}
+
 ::placeholder {
   color: rgb(212, 216, 215);
 }
 
 .searchbutton {
  display:none;
-}
-.fa-search {
-  position:absolute;
-  right:77px;
-  color: white;
 }
