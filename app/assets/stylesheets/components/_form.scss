@@ -1,0 +1,15 @@
+.form-control {
+  align: center;
+  width: 700px;
+  border-radius: 10px;
+}
+
+#desk_description {
+  &:focus {
+    border: solid;
+    outline: none;
+    box-shadow: none;
+    border: none;
+    border-bottom: 2px solid yellow;
+  }
+}

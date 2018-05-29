@@ -12,26 +12,23 @@ class BookingsController < ApplicationController
   def show
   end
 
-  def new
-    @booking = Booking.new
-  end
-
   def edit
   end
 
   def create
-    @booking = Booking.new(booking_params)
-    @booking.user = current_user
+    @desk = Desk.find(params[:desk_id])
+    @booking = Booking.new(desk: @desk, user: current_user)
+
     if @booking.save
-      redirect_to booking_path(@booking)
+      redirect_to desk_bookings_path
     else
-      render :new
+      redirect_to desk_path(@desk), notice: 'could not book'
     end
   end
 
   def update
     if @booking.update(booking_params)
-      redirect_to booking_path(@booking)
+      redirect_to desk_bookings_path
     else
       render :edit
     end
@@ -51,9 +48,5 @@ class BookingsController < ApplicationController
   def set_booking
     @booking = booking.find(params[:id])
     authorize @booking
-  end
-
-  def booking_params
-    params.require(:booking).permit(:desk_id, :user_id, :time)
   end
 end
