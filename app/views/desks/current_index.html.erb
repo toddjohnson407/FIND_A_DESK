@@ -1,22 +1,48 @@
-<div class="container" style="margin-top: 2vh;">
+<!-- <div class="container">
   <h1 class="text-center" style="margin-bottom: 4vh;">Your Desks</h1>
   <div class="row">
     <% @desks.each do |desk| %>
-      <% if desk.user_id == current_user.id %>
-        <div class="col-xs-12 col-sm-4">
-          <div class="card" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.2)), url('<%= cl_image_path desk.photo %>');">
-            <div class="card-category"></div>
-            <div class="card-description">
-              <h2><%= desk.name %></h2>
-              <p><%= desk.description %></p>
-              <p>$ <%= desk.price %></p>
-              <p><%= desk.address %></p>
+    <% if desk.user_id == current_user.id %>
+    <div class="col-xs-12 col-sm-4">
+      <figure class="front" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.2)), url('<%= cl_image_path desk.photo %>');">
+        <div class="card">
+          <div class="caption">
+            <h2><span>desk.name</span></h2>
+            <p><%= desk.description %></p>
+            <p>$ <%= desk.price %></p>
+            <p><%= desk.address %></p>
+          </div> 
+      </figure>
+      <img class="card-user" src="https://kitt.lewagon.com/placeholder/users/tgenaitay">
+      <a class="card-link" <%= link_to "", desk_path(desk)%> </a>
+    </div>
+      <% end %>
+      <% end %>
+    </div>
+  </div>
+</div> -->
+
+  <div class="container">
+    <div class="row">
+        <% @desks.each do |desk| %>
+        <% if desk.user_id == current_user.id %>
+      <div class="col-xs-12 col-sm-6 col-md-4">
+        
+        <div class="card">         
+          <div class="front">
+            <img src=<%= cl_image_path desk.photo %>>
+            <div class="caption">
+              <h2><%=desk.name%></h2>
+              <p><%= desk.description %> <br>              
+                <%= desk.price %> <br>
+                <%= desk.address %></p>
+              <a href="#"></a>
             </div>
-            <img class="card-user" src="https://kitt.lewagon.com/placeholder/users/tgenaitay">
-            <a class="card-link" <%= link_to "", desk_path(desk)%> </a>
           </div>
         </div>
-      <% end %>
-    <% end %>
+
+      </div>
+        <% end %>
+        <% end %>
+    </div>
   </div>
-</div>
