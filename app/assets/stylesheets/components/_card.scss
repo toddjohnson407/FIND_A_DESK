@@ -1,4 +1,7 @@
 .card {
+  border-radius: 10px;
+  box-shadow: 5px 5px #888888;
+  margin: 10px 0;
   height: 175px;
   text-shadow: 0 1px 3px rgba(0,0,0,0.6);
   background-size: cover !important;
@@ -7,9 +10,9 @@
   position: relative;
 }
 
-.card:hover {
-  margin-top: 10px;
-}
+// .card:hover {
+//   margin-top: -4px;
+// }
 
 .card-user {
   position: absolute;
