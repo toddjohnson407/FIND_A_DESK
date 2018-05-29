@@ -23,3 +23,30 @@
   opacity: 0.6;
   margin-bottom: 30px;
 }
+
+form {
+  width: 500px;
+  margin: 60px auto;
+  position: relative;
+}
+.searchbox {
+  width: 350px;
+  background: transparent;
+  outline: 0;
+  border: 0;
+  border-bottom: 2px solid #11b983;
+  border-radius: 5%;
+  color: white;
+}
+::placeholder {
+  color: rgb(212, 216, 215);
+}
+
+.searchbutton {
+ display:none;
+}
+.fa-search {
+  position:absolute;
+  right:77px;
+  color: white;
+}
