@@ -1,7 +1,10 @@
 class Desk < ApplicationRecord
+  belongs_to :user
   validates :name, presence: true
   validates :price, presence: true
   validates :address, presence: true
 
-  belongs_to :user
+
+
+  mount_uploader :photo, PhotoUploader
 end
