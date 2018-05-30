@@ -5,3 +5,11 @@
 #
 #   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
 #   Character.create(name: 'Luke', movie: movies.first)
+
+Rate.destroy_all
+
+Rate.create(pricing: 'per hour')
+Rate.create(pricing: 'per day')
+Rate.create(pricing: 'per week')
+Rate.create(pricing: 'per month')
+
