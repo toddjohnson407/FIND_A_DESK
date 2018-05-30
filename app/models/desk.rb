@@ -1,5 +1,6 @@
 class Desk < ApplicationRecord
   belongs_to :user
+  has_many :rates
   has_many :bookings
 
   validates :name, presence: true
