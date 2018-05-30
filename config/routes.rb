@@ -4,7 +4,7 @@ Rails.application.routes.draw do
   # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
 
   resources :desks do
-   resources :bookings, except: :new
+   resources :bookings
   end
   get "/current_index", to: "desks#current_index"
 end
