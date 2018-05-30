@@ -11,6 +11,7 @@ require 'faker'
 # User.destroy_all
 # Rate.destroy_all
 
+
 Rate.create(pricing: 'per hour')
 Rate.create(pricing: 'per day')
 Rate.create(pricing: 'per week')
