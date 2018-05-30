@@ -21,7 +21,9 @@ class DesksController < ApplicationController
   end
 
   def create
+    @rate = Rate.find_by(pricing: params[:desk][:rate])
     @desk = Desk.new(desk_params)
+    @desk.rate = @rate
     @desk.user = current_user
     if @desk.save
       redirect_to desk_path(@desk)
@@ -55,6 +57,6 @@ class DesksController < ApplicationController
   end
 
   def desk_params
-    params.require(:desk).permit(:name, :user_id, :rate_id, :price, :description, :address, :photo)
+    params.require(:desk).permit(:name, :user_id, :price, :description, :address, :photo)
   end
 end
