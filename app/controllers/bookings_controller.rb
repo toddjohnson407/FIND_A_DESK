@@ -1,4 +1,5 @@
 class BookingsController < ApplicationController
+  before_action :set_desk, only: [:new, :create]
   before_action :set_booking, only: [:show, :edit, :update, :destroy]
 
   def current_index
@@ -15,14 +16,19 @@ class BookingsController < ApplicationController
   def edit
   end
 
+  def new
+    @booking = Booking.new
+  end
+
   def create
-    @desk = Desk.find(params[:desk_id])
-    @booking = Booking.new(desk: @desk, user: current_user)
+    @booking = Booking.new(booking_params)
+    @booking.user = current_user
+    @booking.desk = @desk
 
     if @booking.save
-      redirect_to desk_bookings_path
+      redirect_to desk_booking_path(@desk, @booking), notice: 'You have booked this desk.'
     else
-      redirect_to desk_path(@desk), notice: 'could not book'
+      render :new, notice: 'Could not book.'
     end
   end
 
@@ -43,10 +49,18 @@ class BookingsController < ApplicationController
   end
 
   private
-    # Use callbacks to share common setup or constraints between actions.
+
+  def set_desk
+    @desk = Desk.find(params[:desk_id])
+  end
 
   def set_booking
-    @booking = booking.find(params[:id])
+    @booking = Booking.find(params[:id])
     authorize @booking
   end
+
+  def booking_params
+    params.require(:booking).permit(:start_date, :end_date, :desk_id, :user_id)
+  end
+
 end

@@ -29,7 +29,9 @@ class DesksController < ApplicationController
   end
 
   def create
+    @rate = Rate.find_by(pricing: params[:desk][:rate])
     @desk = Desk.new(desk_params)
+    @desk.rate = @rate
     @desk.user = current_user
     if @desk.save
       redirect_to desk_path(@desk)
