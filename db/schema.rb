@@ -36,9 +36,9 @@ ActiveRecord::Schema.define(version: 2018_05_30_120548) do
     t.integer "rating"
     t.string "photo"
     t.bigint "user_id"
-    t.bigint "rate_id"
     t.float "latitude"
     t.float "longitude"
+    t.bigint "rate_id"
     t.index ["rate_id"], name: "index_desks_on_rate_id"
     t.index ["user_id"], name: "index_desks_on_user_id"
   end
