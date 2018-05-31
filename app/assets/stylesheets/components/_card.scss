@@ -65,7 +65,7 @@
   position: relative;
   transition: 0.6s;
   transform-style: preserve-3d;
-  background: #2e5d5a;
+  background:#585959;
   color: #fff;
   overflow: hidden;
   margin-bottom: 30px;
@@ -127,12 +127,14 @@
   top: 50%;
   left: 0;
   width: 100%;
-  color: rgba(0,10,10,1);
+  color: #e5eae8;
   transition: transform 0.35s, color 0.35s;
   transform: translate3d(0,-50%,0);
 }
-.front h4{
+.front h6{
   color: rgba(17, 185, 131, 1);
+  font-size: 20px;
+  font-weight: 700;
 }
 
 .front h2 span {
