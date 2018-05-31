@@ -7,8 +7,10 @@ require 'faker'
 #   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
 #   Character.create(name: 'Luke', movie: movies.first)
 # Desk.destroy_all
-
-# User.destroy_all
+Booking.destroy_all
+Desk.destroy_all
+User.destroy_all
+Rate.destroy_all
 # Rate.destroy_all
 
 
@@ -32,7 +34,7 @@ end
 
 User.all.each do |user|
   4.times do
-    desk = Desk.new(name: "Desk in Bairro Alto", user_id: user.id, price: 5, description: "Very quiet neighborhood, exceptionally professional with amazing connections to make. The desks are located in an old nightclub",
+    desk = Desk.new(name: "Desk in Bairro Alto", user_id: user.id, price: 5, description: "Very spacy desk, for 1 or 2 people.",
       address: "261, rua da Rosa", remote_photo_url: "https://picsum.photos/200/300/?random")
     if desk.save
       puts "Success creating this desk #{desk.name}"
