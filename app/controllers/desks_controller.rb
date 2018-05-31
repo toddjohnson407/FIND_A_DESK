@@ -6,6 +6,7 @@ class DesksController < ApplicationController
   end
 
   def index
+
     @desks = policy_scope(Desk).order(created_at: :desc)
     @desks = Desk.where.not(latitude: nil, longitude: nil)
     address = params[:submit][:address]
@@ -24,6 +25,10 @@ class DesksController < ApplicationController
   end
 
   def show
+      @booking = Booking.new
+      
+      @desk = Desk.find(params[:id])
+      @markers = { lat: @desk.latitude, lng: @desk.longitude }
   end
 
   def new
@@ -38,6 +43,7 @@ class DesksController < ApplicationController
     @desk = Desk.new(desk_params)
     @desk.rate = @rate
     @desk.user = current_user
+    
     if @desk.save
       redirect_to desk_path(@desk)
     else

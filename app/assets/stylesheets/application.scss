@@ -13,7 +13,13 @@
 @import "layouts/index";
 @import "components/index";
 @import "pages/index";
+@import "pages/show";
 
-abbr {
+
+
+// @import 'flatpickr/dist/flatpickr.css';
+
+
+abbr {	
   display: none;
 }
