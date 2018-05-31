@@ -24,9 +24,9 @@ if (startDateinput && endDateinput) {
 }
 
 import './application.css';
-import flatpickr from 'flatpickr';
+// import flatpickr from 'flatpickr';
 console.log("working");
 import initDatePicker from '../components/datepicker';
 
 initDatePicker();
->>>>>>> master
+

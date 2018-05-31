@@ -12,15 +12,23 @@
   </div>
 
   <div class="desk_description text-center">
-   <h1>Lisbon</h1>
-
-   <ul class="list-inline">
+   <h1>Praça Luís de Camões - Lisboa</h1>
+   <ul id="text_size" class="list-inline">
     <li class="desk-feature">
       <i class="fas fa-users"></i>
       <% # capacity: %>
       3  
     </li> 
-    <li class="desk-feature">dssdsd</li>
+    <li class="desk-feature">
+      <i class="fas fa-phone"></i>
+      <% # number: %>
+      918806070  
+    </li>
+    <li class="desk-feature">
+      <i class="far fa-envelope-open"></i>
+      <% # email: %>
+      martagaiabras@gmail.com  
+    </li>
     <li class="desk-feature"></li>
   </ul>
 </div>
@@ -30,39 +38,60 @@
   <div class="container">
     <div class="row">
       <div class="col-xs-12 col-sm-8" style="height: 200px;">
-
-      </div>
-      <div class="hidden-xs col-sm-4" style="height: 200px;">
-        <div class="card_2 ">
-          <div class="top">
-            <h1><strong>€130 </strong>per night</h1>
-            <p><i class="fas fa-star"><i class="fas fa-star"></i>
-            </i><i class="fas fa-star"></i>
+        <div class="background">
+          <h1> Lovely desk in Lisbon  </h1>
+          <p> This is an amazing desk in the middle of Lisbon! You can share the desk with 3 other people for just 30€ per week. You also have a parking spot available and free wi-fi!</p>
+          <div class="col-md-6">
+            <img src= <%= cl_image_path @desk.photo%> class="image_right" style="width: 300px;">            
           </div>
-          <p>Dates</p>
-          <div class="dates">
-            <div class="row">
-            <!--   <%= simple_form_for [@desk] do |f| %>
-                
-                <div class="desk-booking-form">
-                  <div class="col-md-6">
-                    <p>
-                      <%#= f.input :date_begin, as: :string, id:"desk_check_in", class:"flatpickr-input"  %>
-                    </p>
-                  </div>
+          <div class="col-md-6">
+           <img src= <%= cl_image_path @desk.photo%> class="image_left" style="width: 300px;">           
+         </div>
+         <div class="col-md-6">
+          <img src= <%= cl_image_path @desk.photo%> class="image_right" style="width: 300px;">            
+        </div>
+        <div class="col-md-6">
+         <img src=<%= cl_image_path @desk.photo%> class="image_left" style="width: 300px;">            
+       </div>
 
-                  <div class="col-md-6">
-                    <p>
-                      <%#= f.input :date_end, as: :string, id:"booking_date_end", class:"flatpickr-input" %>
-                    </p>
-                  </div>
+       <div id="map" style="width: 80%; height: 250px; margin-left:30px; margin-top: 30px; margin-bottom: 30px" data-markers="<%= @markers.to_json %>"></div>
 
-                    <div class="book-booking-box">
-                      <%#= f.submit "Book it!",class: "btn btn-danger" %>
-                    </div>
 
-                   </div>
-              <% end %> -->
+     </div>
+   </div>
+   <div class="hidden-xs col-sm-4" style="height: 200px;">
+    <div class="card_2 ">
+      <div class="top">
+        <h1><strong>€130 </strong>per night</h1>
+        <p><i class="fas fa-star"><i class="fas fa-star"></i>
+        </i><i class="fas fa-star"></i>
+      </div>
+      <p>Dates</p>
+      <div class="dates">
+        <%= simple_form_for [@desk, @booking] do |f| %>
+
+        <div class="desk-booking-form">
+          <div class="col-md-6">
+            <div class="check_in">
+              <p>
+                <%= f.input :start_date, as: :string, id:"desk_check_in", class:"flatpickr-input"  %>
+              </p>
+            </div>
+          </div>
+          <div class="col-md-6">
+            <div class="check_out">
+              <p>
+                <%= f.input :end_date, as: :string, id:"booking_date_end", class:"flatpickr-input" %>
+              </p>
+            </div>
+            <div class="button">
+              <%= f.submit "Book it!",class: "btn-used"%>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <% end %>
 
 
                          <!--        <div class="col-md-6">
@@ -79,60 +108,33 @@
                                   </div>  
 
                                 </div> -->
-            </div>
-            
-          </div>
+                              </div>
+
+                            </div>
 
                 <!--           <div class="align-center">
               <%#= link_to "Book this Desk", desk_bookings_path(@desk), method: 'post', class: "btn-treehouse" %>
             </div> -->
 
 
+          </div>
+
+
         </div>
 
-        
       </div>
-
-    <div class="text-center" style="margin-top: 6vh;">
-      <% if policy(@desk).destroy? %>
+      <div class="text-center" style="margin-top: 6vh;">
+        <% if policy(@desk).destroy? %>
         <%= link_to "Remove this Desk", @desk, class: "btn-medium", method: :delete, data: { confirm: 'Are you sure?' } %>
-      <% end %>
-      <% if policy(@desk).edit? %>
+        <% end %>
+        <% if policy(@desk).edit? %>
         <%= link_to "Edit this Desk", edit_desk_path(@desk), class: "btn-medium" %>
-      <% end %>
-      <br>
-      <br>
-      <br>
-      <%= link_to "Book this Desk", new_desk_booking_path(@desk), class: "btn-treehouse" %>
+        <% end %>
+        <br>
+        <br>
+        <br>
 
+      </div>
     </div>
   </div>
-</div>
-
-
-
-
-
-
-
-
-
-<div class="background">
-  <p><%= @desk.description %></p>
-</div>
-
-<div class="text-center" style="margin-top: 6vh;">
-  <% if policy(@desk).destroy? %>
-  <%= link_to "Remove this Desk", @desk, class: "btn-medium", method: :delete, data: { confirm: 'Are you sure?' } %>
-  <% end %>
-  <% if policy(@desk).edit? %>
-  <%= link_to "Edit this Desk", edit_desk_path(@desk), class: "btn-medium" %>
-  <% end %>
-  <br>
-  <br>
-  <br>
-
-</div>
-</div>
-</div>
 
