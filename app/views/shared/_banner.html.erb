@@ -1,7 +1,7 @@
 <div class="banner mybanner" style="background: url('<%= cl_image_path('background') %>')">
   <div class="banner-content">
     <h1>Find a Desk</h1>
-    <p>Get a place to work anywhere, any time.</p>
+    <p>Get a place to work anywhere, anytime.</p>
     <%= simple_form_for :submit, url: desks_path, class: 'home-form', :method => :get do |f| %>
       <%= f.input :address, class: "searchbox", type: "text", placeholder: "Where?", required: true, label: false %>
       <i class= "fas fa-search"></i>
@@ -9,3 +9,11 @@
     <% end %>
   </div>
 </div>
+
+
+
+
+
+
+
+
