@@ -1,8 +1,8 @@
 .mybanner {
   background: white;
 }
+
 .banner {
-  color: white;
   text-align: center;
   height: 100vh;
   background-size: cover !important;
@@ -10,6 +10,7 @@
   align-items: center;
   justify-content: center;
 }
+
 .banner h1 {
   font-size: 50px;
   font-weight: bold;
@@ -22,6 +23,30 @@
   opacity: 0.6;
   margin-bottom: 30px;
 }
+
+.banner_show {
+  text-align: center;
+  height: 40vh;
+  background-size: cover !important;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.banner_show h2 {
+  font-size: 50px;
+  font-weight: 600;
+  text-shadow: 0px 1px rgba(0, 0, 0, 0.2);
+  color:white;  
+}
+
+.banner_show p {
+  font-size: 20px;
+  font-weight: 600;
+  text-shadow: 0px 1px rgba(0, 0, 0, 0.2);
+  color:white;  
+}
+
 
 .home-form {
   width: 500px;

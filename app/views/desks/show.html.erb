@@ -1,27 +1,140 @@
 
-<div class="container" style="margin-top: 2vh;">
-  <div class="row">
-    <div class="card" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.2)), url('<%= cl_image_path @desk.photo %>');">
-      <div class="card-category">Popular</div>
-      <div class="card-description">
-        <h2><%= @desk.name %></h2>
-        <p><%= @desk.description %></p>
-        <p><%= @desk.address %></p>
-      </div>
-      <img class="card-user" src="https://kitt.lewagon.com/placeholder/users/tgenaitay">
-      <a class="card-link" <%= link_to "", desk_path(@desk)%> </a>
+<div class="top_section">
+  <div class="banner_show" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.2)), url('<%= cl_image_path @desk.photo %>');"> 
+    <div>
+      <h2><%= @desk.name %></h2>
+      <p><%= @desk.address %></p>
     </div>
-    <div class="text-center" style="margin-top: 6vh;">
-      <% if policy(@desk).destroy? %>
+
+  </div>
+  <div class="logo_container">
+    <img id="avatar" src="https://kitt.lewagon.com/placeholder/users/random">
+  </div>
+
+  <div class="desk_description text-center">
+   <h1>Praça Luís de Camões - Lisboa</h1>
+   <ul id="text_size" class="list-inline">
+    <li class="desk-feature">
+      <i class="fas fa-users"></i>
+      <% # capacity: %>
+      3  
+    </li> 
+    <li class="desk-feature">
+      <i class="fas fa-phone"></i>
+      <% # number: %>
+      918806070  
+    </li>
+    <li class="desk-feature">
+      <i class="far fa-envelope-open"></i>
+      <% # email: %>
+      martagaiabras@gmail.com  
+    </li>
+    <li class="desk-feature"></li>
+  </ul>
+</div>
+</div>
+
+<div class="wrapper" style="background-color: #eee">
+  <div class="container">
+    <div class="row">
+      <div class="col-xs-12 col-sm-8" style="height: 200px;">
+        <div class="background">
+          <h1> Lovely desk in Lisbon  </h1>
+          <p> This is an amazing desk in the middle of Lisbon! You can share the desk with 3 other people for just 30€ per week. You also have a parking spot available and free wi-fi!</p>
+          <div class="col-md-6">
+            <img src= <%= cl_image_path @desk.photo%> class="image_right" style="width: 300px;">            
+          </div>
+          <div class="col-md-6">
+           <img src= <%= cl_image_path @desk.photo%> class="image_left" style="width: 300px;">           
+         </div>
+         <div class="col-md-6">
+          <img src= <%= cl_image_path @desk.photo%> class="image_right" style="width: 300px;">            
+        </div>
+        <div class="col-md-6">
+         <img src=<%= cl_image_path @desk.photo%> class="image_left" style="width: 300px;">            
+       </div>
+
+       <div id="map" style="width: 80%; height: 250px; margin-left:30px; margin-top: 30px; margin-bottom: 30px" data-markers="<%= @markers.to_json %>"></div>
+
+
+     </div>
+   </div>
+   <div class="hidden-xs col-sm-4" style="height: 200px;">
+    <div class="card_2 ">
+      <div class="top">
+        <h1><strong>€130 </strong>per night</h1>
+        <p><i class="fas fa-star"><i class="fas fa-star"></i>
+        </i><i class="fas fa-star"></i>
+      </div>
+      <p>Dates</p>
+      <div class="dates">
+        <%= simple_form_for [@desk, @booking] do |f| %>
+
+        <div class="desk-booking-form">
+          <div class="col-md-6">
+            <div class="check_in">
+              <p>
+                <%= f.input :start_date, as: :string, id:"desk_check_in", class:"flatpickr-input"  %>
+              </p>
+            </div>
+          </div>
+          <div class="col-md-6">
+            <div class="check_out">
+              <p>
+                <%= f.input :end_date, as: :string, id:"booking_date_end", class:"flatpickr-input" %>
+              </p>
+            </div>
+            <div class="button">
+              <%= f.submit "Book it!",class: "btn-used"%>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <% end %>
+
+
+                         <!--        <div class="col-md-6">
+                                  
+                                  <div class="check_in">
+                                    <input type ="text" class="text" label="Check-in" id="desk_check_in"  placeholder ="Check-in">
+                                  </div>
+
+                                </div>
+                                <div class="col-md-6">
+
+                                  <div class="check_out">
+                                    <input type ="text" class="text" label="Check-out" id="desk_check_out" placeholder ="Check-out">
+                                  </div>  
+
+                                </div> -->
+                              </div>
+
+                            </div>
+
+                <!--           <div class="align-center">
+              <%#= link_to "Book this Desk", desk_bookings_path(@desk), method: 'post', class: "btn-treehouse" %>
+            </div> -->
+
+
+          </div>
+
+
+        </div>
+
+      </div>
+      <div class="text-center" style="margin-top: 6vh;">
+        <% if policy(@desk).destroy? %>
         <%= link_to "Remove this Desk", @desk, class: "btn-medium", method: :delete, data: { confirm: 'Are you sure?' } %>
-      <% end %>
-      <% if policy(@desk).edit? %>
+        <% end %>
+        <% if policy(@desk).edit? %>
         <%= link_to "Edit this Desk", edit_desk_path(@desk), class: "btn-medium" %>
-      <% end %>
-      <br>
-      <br>
-      <br>
-      <%= link_to "Book this Desk", new_desk_booking_path(@desk), class: "btn-treehouse" %>
+        <% end %>
+        <br>
+        <br>
+        <br>
+
+      </div>
     </div>
   </div>
-</div>
+
