@@ -6,8 +6,11 @@ class DesksController < ApplicationController
   end
 
   def index
-    @desks = policy_scope(Desk).where(address: params['submit']['address']).order(created_at: :desc)
+
+    @desks = policy_scope(Desk).order(created_at: :desc)
     @desks = Desk.where.not(latitude: nil, longitude: nil)
+    address = params[:submit][:address]
+    @desks.to_a.map! { |desk| desk.address == address  }
 
     @markers = @desks.map do |desk|
       {
@@ -15,6 +18,10 @@ class DesksController < ApplicationController
         lng: desk.longitude
       }
     end
+  end
+
+  def search_results
+    @desks = Desk.where(params['submit']['address']).order(created_at: :desc)
   end
 
   def show
