@@ -1,1 +1,95 @@
 
+.logo_container {
+	position: relative;
+	display: block;
+	text-align: center;
+	top: -90px;
+}
+
+.desk_description {
+	margin-top: -80px;
+	padding-bottom: 10px;
+	h1 {
+		text-align: center;
+		font-size: 16px;
+		color: #11b983;
+		font-family: helvetica;
+		text-transform: uppercase;
+	}
+	.desk-feature {
+		padding: 0 10px !important;
+	}
+	.fa-users {
+		color: #11b983;
+		font-size: 20px;
+	}
+}
+
+.wrapper{
+	height: 500px;
+}
+.card_2 {
+	border:2px solid #e4e4e4;
+	width: 100%;
+	padding-left: 15px;
+	padding-right:15px;
+	padding-bottom: 100px;
+	background: white;
+	height: 400px; 	
+	h1 	{text-align: left;
+		font-size: 16px;
+		color: #rgba(0,0,0,0.2);
+		margin-bottom: -7px;
+		font-family: helvetica;
+	}
+	.fa-star {
+		color: #11b983;
+		font-size: 10px;
+		margin-top: -10px;
+	}
+	p {
+		font-size: 12px;
+	}
+}
+
+.top {
+	width:100%;
+	border-bottom: 1px solid #DBDBDB;  
+}
+
+.dates{
+	display: flex; 
+	border-radius: 2px; 
+	width: 100%;
+	box-sizing: border-box;
+	b {
+		font-family: helvetica;
+		font-size:14px;
+	}
+}
+
+.check_in{
+	font-size: 17px; 
+	line-height: 24px; 
+	display: flex;
+	vertical-align: middle;
+	margin-right: -10px;
+		input {
+		width:100%;
+	}
+}
+
+.check_out{
+	margin-left: -10px;
+	font-size: 17px; 
+	line-height: 24px; 
+	display: flex;
+	vertical-align: middle;
+	input {
+		width:100%;
+	}
+}
+
+.align-center{
+	text-align: center;
+}

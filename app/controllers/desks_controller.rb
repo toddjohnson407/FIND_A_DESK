@@ -15,6 +15,7 @@ class DesksController < ApplicationController
 
   def new
     @desk = Desk.new
+    @booking = Booking.new
   end
 
   def edit

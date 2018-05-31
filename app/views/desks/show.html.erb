@@ -1,27 +1,124 @@
 
-<div class="container" style="margin-top: 2vh;">
-  <div class="row">
-    <div class="card" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.2)), url('<%= cl_image_path @desk.photo %>');">
-      <div class="card-category">Popular</div>
-      <div class="card-description">
-        <h2><%= @desk.name %></h2>
-        <p><%= @desk.description %></p>
-        <p><%= @desk.address %></p>
-      </div>
-      <img class="card-user" src="https://kitt.lewagon.com/placeholder/users/tgenaitay">
-      <a class="card-link" <%= link_to "", desk_path(@desk)%> </a>
+<div class="top_section">
+  <div class="banner_show" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.2)), url('<%= cl_image_path @desk.photo %>');"> 
+    <div>
+      <h2><%= @desk.name %></h2>
+      <p><%= @desk.address %></p>
     </div>
-    <div class="text-center" style="margin-top: 6vh;">
-      <% if policy(@desk).destroy? %>
-        <%= link_to "Remove this Desk", @desk, class: "btn-medium", method: :delete, data: { confirm: 'Are you sure?' } %>
-      <% end %>
-      <% if policy(@desk).edit? %>
-        <%= link_to "Edit this Desk", edit_desk_path(@desk), class: "btn-medium" %>
-      <% end %>
-      <br>
-      <br>
-      <br>
-      <%= link_to "Book this Desk", desk_bookings_path(@desk), method: 'post', class: "btn-treehouse" %>
+  </div>
+  <div class="logo_container">
+    <img id="avatar" src="https://kitt.lewagon.com/placeholder/users/random">
+  </div>
+
+  <div class="desk_description text-center">
+   <h1>Lisbon</h1>
+
+   <ul class="list-inline">
+    <li class="desk-feature">
+      <i class="fas fa-users"></i>
+      <% # capacity: %>
+      3  
+    </li> 
+    <li class="desk-feature">dssdsd</li>
+    <li class="desk-feature"></li>
+  </ul>
+</div>
+</div>
+
+<div class="wrapper" style="background-color: #eee">
+  <div class="container">
+    <div class="row">
+      <div class="col-xs-12 col-sm-8" style="height: 200px;">
+
+      </div>
+      <div class="hidden-xs col-sm-4" style="height: 200px;">
+        <div class="card_2 ">
+          <div class="top">
+            <h1><strong>€130 </strong>per night</h1>
+            <p><i class="fas fa-star"><i class="fas fa-star"></i>
+            </i><i class="fas fa-star"></i>
+          </div>
+          <p>Dates</p>
+          <div class="dates">
+            <div class="row">
+            <!--   <%= simple_form_for [@desk] do |f| %>
+                
+                <div class="desk-booking-form">
+                  <div class="col-md-6">
+                    <p>
+                      <%#= f.input :date_begin, as: :string, id:"desk_check_in", class:"flatpickr-input"  %>
+                    </p>
+                  </div>
+
+                  <div class="col-md-6">
+                    <p>
+                      <%#= f.input :date_end, as: :string, id:"booking_date_end", class:"flatpickr-input" %>
+                    </p>
+                  </div>
+
+                    <div class="book-booking-box">
+                      <%#= f.submit "Book it!",class: "btn btn-danger" %>
+                    </div>
+
+                   </div>
+              <% end %> -->
+
+
+                         <!--        <div class="col-md-6">
+                                  
+                                  <div class="check_in">
+                                    <input type ="text" class="text" label="Check-in" id="desk_check_in"  placeholder ="Check-in">
+                                  </div>
+
+                                </div>
+                                <div class="col-md-6">
+
+                                  <div class="check_out">
+                                    <input type ="text" class="text" label="Check-out" id="desk_check_out" placeholder ="Check-out">
+                                  </div>  
+
+                                </div> -->
+            </div>
+            
+          </div>
+
+                <!--           <div class="align-center">
+              <%#= link_to "Book this Desk", desk_bookings_path(@desk), method: 'post', class: "btn-treehouse" %>
+            </div> -->
+
+
+        </div>
+
+        
+      </div>
     </div>
   </div>
 </div>
+
+
+
+
+
+
+
+
+
+<div class="background">
+  <p><%= @desk.description %></p>
+</div>
+
+<div class="text-center" style="margin-top: 6vh;">
+  <% if policy(@desk).destroy? %>
+  <%= link_to "Remove this Desk", @desk, class: "btn-medium", method: :delete, data: { confirm: 'Are you sure?' } %>
+  <% end %>
+  <% if policy(@desk).edit? %>
+  <%= link_to "Edit this Desk", edit_desk_path(@desk), class: "btn-medium" %>
+  <% end %>
+  <br>
+  <br>
+  <br>
+
+</div>
+</div>
+</div>
+
