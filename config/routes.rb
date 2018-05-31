@@ -7,4 +7,6 @@ Rails.application.routes.draw do
    resources :bookings
   end
   get "/current_index", to: "desks#current_index"
+  get "/bookings/current_index", to: "bookings#current_index"
+  get "/search_results", to: "desks#search_results"
 end
