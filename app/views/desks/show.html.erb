@@ -5,6 +5,7 @@
       <h2><%= @desk.name %></h2>
       <p><%= @desk.address %></p>
     </div>
+
   </div>
   <div class="logo_container">
     <img id="avatar" src="https://kitt.lewagon.com/placeholder/users/random">
@@ -91,6 +92,19 @@
 
         
       </div>
+
+    <div class="text-center" style="margin-top: 6vh;">
+      <% if policy(@desk).destroy? %>
+        <%= link_to "Remove this Desk", @desk, class: "btn-medium", method: :delete, data: { confirm: 'Are you sure?' } %>
+      <% end %>
+      <% if policy(@desk).edit? %>
+        <%= link_to "Edit this Desk", edit_desk_path(@desk), class: "btn-medium" %>
+      <% end %>
+      <br>
+      <br>
+      <br>
+      <%= link_to "Book this Desk", new_desk_booking_path(@desk), class: "btn-treehouse" %>
+
     </div>
   </div>
 </div>

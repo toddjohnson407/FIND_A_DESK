@@ -22,3 +22,11 @@ if (startDateinput && endDateinput) {
       dateFormat: 'd-m-Y',
     });
 }
+
+import './application.css';
+import flatpickr from 'flatpickr';
+console.log("working");
+import initDatePicker from '../components/datepicker';
+
+initDatePicker();
+>>>>>>> master

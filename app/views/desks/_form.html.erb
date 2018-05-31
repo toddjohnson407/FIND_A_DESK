@@ -1,7 +1,7 @@
 
 <body style="color: white; background: url('<%= cl_image_path('background') %>')">
   <div class="container" style="margin-top: 3vh;">
-    <h1 style="margin-bottom: 4vh;">Create a New Desk</h1>
+    <h1 style="margin-bottom: 4vh;">Promote your workspace - be creative </h1>
     <%= simple_form_for(@desk) do |f| %>
       <%= f.error_notification %>
       <%= f.error_notification message: f.object.errors[:base].to_sentence if f.object.errors[:base].present? %>
@@ -10,7 +10,7 @@
         <%= f.input :name %>
         <%= f.input :description %>
         <%= f.input :price %>
-        <%= f.association :rate %>
+        <%= f.input :rate, as: :select, collection: Rate.all.map(&:pricing)  %>
         <%= f.input :address %>
       </div>
 
