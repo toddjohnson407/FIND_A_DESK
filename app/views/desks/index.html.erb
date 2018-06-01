@@ -16,7 +16,8 @@
               <h6><%=desk.price%>€      <%=desk.rate.pricing%></h6>
               <p><%= desk.description[0,30] %>... <br>
                 <%= desk.price %>€ <%=desk.rate.pricing%><br>
-                <%= desk.address %></p>
+                <%= desk.address %></p><br>
+                <%= desk.capacity %>
                 <a href="#"><%= link_to "", desk_path(desk)%></a>
               </div>
             </div>

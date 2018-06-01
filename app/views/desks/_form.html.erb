@@ -11,6 +11,7 @@
         <%= f.input :description %>
         <%= f.input :price %>
         <%= f.input :rate, as: :select, collection: Rate.all.map(&:pricing)  %>
+        <%= f.input :capacity %>
         <%= f.input :address %>
       </div>
 
