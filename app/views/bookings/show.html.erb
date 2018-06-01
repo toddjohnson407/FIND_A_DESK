@@ -1,10 +1,8 @@
-<h1>You have booked this desk.</h1>
-
-<h2>For: </h2>
-<%= @booking.start_date %>
-<br>
-<h2>To: </h2>
-<%= @booking.end_date %>
+<div class="container" style="height: 700px; margin-left: 80px;">
+	<% desk = Desk.find_by(params[:user_id]) %>
+<h1>Welcome! </h1>
+	<p>You have booked <%= desk.name %> from the <%= @booking.start_date.strftime("%d-%m-%Y")%> until <%= @booking.end_date.strftime("%d-%m-%Y") %>!</p>
+</div>
 
 <% if policy(@booking).destroy? %>
 <br>
