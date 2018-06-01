@@ -5,7 +5,7 @@
 
 .banner {
   text-align: center;
-  height: 100vh;
+  height: 93vh;
   background-size: cover !important;
   display: flex;
   align-items: center;
@@ -14,7 +14,8 @@
 
 .banner h1 {
   font-size: 50px;
-  font-weight: bold;
+  // font-weight: bold;
+  color: white;
   text-shadow: 0px 1px rgba(0, 0, 0, 0.2);
 }
 .banner p {
@@ -38,14 +39,14 @@
   font-size: 50px;
   font-weight: 600;
   text-shadow: 0px 1px rgba(0, 0, 0, 0.2);
-  color:white;  
+  color:white;
 }
 
 .banner_show p {
   font-size: 20px;
   font-weight: 600;
   text-shadow: 0px 1px rgba(0, 0, 0, 0.2);
-  color:white;  
+  color:white;
 }
 
 
@@ -61,8 +62,10 @@ form {
     position: absolute;
     right: 86px;
     top: 10px;
+    color: white;
   }
 }
+
 
 #submit_address {
   width: 500px;
@@ -86,11 +89,63 @@ form {
   }
 }
 
-::placeholder {
-  color: rgb(212, 216, 215);
+::-webkit-input-placeholder {
+  color: white;
+  opacity: 1;
 }
 
 .searchbutton {
  display:none;
+ color: white;
 }
+
+.container h2 {
+  font-size: 25px;
+  font-weight: bold;
+  text-align: left;
+  margin-top: 25px;
+  font-family: "Raleway", "Helvetica", "sans-serif";
+}
+
+.container p {
+  font-size: 18px;
+  text-align: left;
+  font-family: "Raleway", "Helvetica", "sans-serif";
+}
+
+.container-card {
+  position: relative;
+  transition: 0.6s;
+  transform-style: preserve-3d;
+  background:#585959;
+  color: #fff;
+  overflow: hidden;
+  // margin-bottom: 30px;
+
+  top: 0;
+  left: 0;
+  width: auto;
+  // height: 200px;
+  text-align: center;
+  cursor: pointer;
+  transition: 0.6s;
+  transform-style: preserve-3d;
+  // box-shadow: 0 1px 5px rgba(0,0,0,0.9);
+}
+
+.container .fa-comments {
+  font-size: 50px;
+  margin-left: -210px;
+}
+
+.container .fa-lightbulb {
+  font-size: 50px;
+  margin-left: -232px;
+}
+
+.container .fa-history {
+  font-size: 50px;
+  margin-left: -218px;
+}
+
 

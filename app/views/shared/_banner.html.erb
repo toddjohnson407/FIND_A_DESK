@@ -1,8 +1,7 @@
-<div class="banner mybanner" style="background: url('<%= cl_image_path('background') %>')">
+<div class="banner mybanner" style="background: url('<%= cl_image_path('crew-88128-unsplash') %>')">
   <div class="banner-content">
-
-    <h1>Find your Desk</h1>
-    <p>Get a place to work anywhere, any time.</p>
+    <h1>Find your Workspace</h1>
+    <p>Work hard <span class="text-banner"></span></p>
     <%= simple_form_for :submit, url: desks_path, class: 'home-form', :method => :get do |f| %>
       <%= f.input :address, class: "searchbox", type: "text", placeholder: "Where?", required: true, label: false %>
       <i class= "fas fa-search"></i>
