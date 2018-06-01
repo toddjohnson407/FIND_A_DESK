@@ -32,10 +32,19 @@
           <img src=<%= cl_image_path desk.photo %>>
           <div class="caption">
             <h2><%=desk.name%></h2>
-            <h6><%=desk.price%>€      <%=desk.rate.pricing%></h6>
-            <p><%= desk.description[0,30] %>... <br>
-              <%= desk.price %>€ <%=desk.rate.pricing%><br>
-              <%= desk.address %></p>
+            <% if desk.rate.nil? %>
+              <%= puts 'working' %>
+              <h6><%=desk.price%>€</h6>
+              <p><%= desk.description[0,30] %>... <br>
+                <%= desk.price %>€<br>
+                <%= desk.address %></p>
+            <% else %>
+              <h6><%=desk.price%>€      <%=desk.rate.pricing%></h6>
+              <p><%= desk.description[0,30] %>... <br>
+                <%= desk.price %>€ <%=desk.rate.pricing%><br>
+                <%= desk.address %></p>
+            <% end %>
+
             <a href="#"><%= link_to "", desk_path(desk)%></a>
           </div>
         </div>
