@@ -5,3 +5,10 @@
 <br>
 <h2>To: </h2>
 <%= @booking.end_date %>
+
+<% if policy(@booking).destroy? %>
+<br>
+<%= link_to "Cancel this booking",  desk_booking_path(params[:desk_id], @booking), class: "btn-medium", method: :delete, data: { confirm: 'Are you sure?' } %>
+<% end %>
+<br>
+<br>
