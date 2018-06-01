@@ -11,7 +11,8 @@ class DesksController < ApplicationController
     @desks = Desk.where.not(latitude: nil, longitude: nil)
     address = params[:submit][:address]
 
-    @desks = @desks.to_a.select { |desk| desk.address == address  }
+    @desks = @desks.to_a.select { |desk| desk.address.upcase.include? address.upcase  }
+
 
     @markers = @desks.map do |desk|
       {
@@ -29,6 +30,7 @@ class DesksController < ApplicationController
       @booking = Booking.new
 
       @desk = Desk.find(params[:id])
+      @rate = Rate.find_by(params[:desk_id])
       @markers = { lat: @desk.latitude, lng: @desk.longitude }
   end
 
