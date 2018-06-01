@@ -8,7 +8,7 @@ if (startDateinput && endDateinput) {
   flatpickr(startDateinput, {
     minDate: 'today',
     dateFormat: 'd-m-Y',
-    
+
     onChange: function(_, selectedDate) {
     if (selectedDate === '') {
       return endDateinput.disabled = true;
@@ -30,3 +30,5 @@ import initDatePicker from '../components/datepicker';
 
 initDatePicker();
 
+import { loadDynamicBannerText } from '../components/banner';
+loadDynamicBannerText();

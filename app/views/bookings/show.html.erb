@@ -4,3 +4,9 @@
 	<p>You have booked <%= desk.name %> from the <%= @booking.start_date.strftime("%d-%m-%Y")%> until <%= @booking.end_date.strftime("%d-%m-%Y") %>!</p>
 </div>
 
+<% if policy(@booking).destroy? %>
+<br>
+<%= link_to "Cancel this booking",  desk_booking_path(params[:desk_id], @booking), class: "btn-medium", method: :delete, data: { confirm: 'Are you sure?' } %>
+<% end %>
+<br>
+<br>

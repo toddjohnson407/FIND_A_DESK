@@ -12,6 +12,7 @@
                 <h6><%= booking.desk.name %></h6>
               </div>
               <p>From: <%= booking.start_date %> <br> To: <%= booking.end_date %></p>
+              <a href="#"><%= link_to "", desk_booking_path(booking.desk_id, booking)%></a>
             </div>
           </div>
         </div>
