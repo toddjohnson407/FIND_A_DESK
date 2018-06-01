@@ -1,14 +1,12 @@
-<h1>You have booked this desk.</h1>
+<body style="background-color: black;">
 
-<h2>For: </h2>
-<%= @booking.start_date %>
-<br>
-<h2>To: </h2>
-<%= @booking.end_date %>
 
-<% if policy(@booking).destroy? %>
+<div class="container" style="height: 700px; margin-left: 80px; color: white; background: url('<%= cl_image_path('erabonqd9mzedb29qwtp') %>">
+    <% desk = Desk.find_by(params[:user_id]) %>
+<h1>Welcome! </h1>
 <br>
-<%= link_to "Cancel this booking",  desk_booking_path(params[:desk_id], @booking), class: "btn-medium", method: :delete, data: { confirm: 'Are you sure?' } %>
-<% end %>
-<br>
-<br>
+    <p>You have booked <%= desk.name %> from the <%= @booking.start_date.strftime("%d-%m-%Y")%> until <%= @booking.end_date.strftime("%d-%m-%Y") %>!</p>
+    <br>
+    <%= link_to "Cancel this booking",  desk_booking_path(params[:desk_id], @booking), class: "btn-treehouse", method: :delete, data: { confirm: 'Are you sure?' } %>
+</div>
+</body>
