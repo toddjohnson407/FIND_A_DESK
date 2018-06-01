@@ -87,16 +87,11 @@ form {
     border: none;
     border-bottom: 2px solid yellow;
   }
+  &::placeholder {
+    color: white ;
+  }
 }
 
-// ::-webkit-input-placeholder {
-//   color: white;
-//   opacity: 1;
-// }
-
-// input::placeholder {
-//   color: red;
-// }
 
 .searchbutton {
  display:none;
