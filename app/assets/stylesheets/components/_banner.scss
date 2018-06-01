@@ -89,10 +89,14 @@ form {
   }
 }
 
-::-webkit-input-placeholder {
-  color: white;
-  opacity: 1;
-}
+// ::-webkit-input-placeholder {
+//   color: white;
+//   opacity: 1;
+// }
+
+// input::placeholder {
+//   color: red;
+// }
 
 .searchbutton {
  display:none;
