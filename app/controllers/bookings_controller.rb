@@ -11,7 +11,7 @@ class BookingsController < ApplicationController
   end
 
   def show
-    
+
   end
 
   def edit
@@ -44,7 +44,7 @@ class BookingsController < ApplicationController
   def destroy
     @booking.destroy
     respond_to do |format|
-      format.html { redirect_to bookings_path, notice: 'booking was successfully removed.' }
+      format.html { redirect_to bookings_current_index_path, notice: 'booking was successfully removed.' }
       format.json { head :no_content }
     end
   end
