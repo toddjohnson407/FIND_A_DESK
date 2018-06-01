@@ -4,6 +4,7 @@
     <div>
       <h2><%= @desk.name %></h2>
       <p><%= @desk.address %></p>
+      <br>
     </div>
 
   </div>
@@ -22,7 +23,7 @@
     <li class="desk-feature">
       <i class="fas fa-phone"></i>
       <% # number: %>
-      918806070
+      <!-- 918806070 -->
     </li>
     <li class="desk-feature">
       <i class="far fa-envelope-open"></i>
@@ -40,8 +41,8 @@
     <div class="row">
       <div class="col-xs-12 col-sm-8" style="height: 200px;">
         <div class="background">
-          <h1> Lovely desk in Lisbon  </h1>
-          This is an amazing desk in the middle of Lisbon! You can share the desk with 3 other people for just 30€ per week. You also have a parking spot available and free wi-fi!</p>
+          <h1><%= @desk.name %></h1>
+          <p><%= @desk.description %></p>
 
           <div class="col-md-6">
             <img src= <%= cl_image_path @desk.photo%> class="image_right" style="width: 300px;">
@@ -64,7 +65,7 @@
    <div class="hidden-xs col-sm-4" style="height: 200px;">
     <div class="card_2 ">
       <div class="top">
-        <h1><strong>€130 </strong>per night</h1>
+        <h1><strong>€<%= @desk.price %> </strong><%= @rate.pricing %></h1>
         <p><i class="fas fa-star"><i class="fas fa-star"></i>
         </i><i class="fas fa-star"></i>
       </div>
