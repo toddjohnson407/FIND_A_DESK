@@ -1,6 +1,6 @@
 
 <div class="top_section">
-  <div class="banner_show" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.2)), url('<%= cl_image_path @desk.photo %>');"> 
+  <div class="banner_show" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.2)), url('<%= cl_image_path @desk.photo %>');">
     <div>
       <h2><%= @desk.name %></h2>
       <p><%= @desk.address %></p>
@@ -12,22 +12,23 @@
   </div>
 
   <div class="desk_description text-center">
-   <h1>Praça Luís de Camões - Lisboa</h1>
+   <h1><%= @desk.address %></h1>
    <ul id="text_size" class="list-inline">
     <li class="desk-feature">
       <i class="fas fa-users"></i>
       <% # capacity: %>
-      3  
-    </li> 
+      <%= @desk.capacity %>
+    </li>
     <li class="desk-feature">
       <i class="fas fa-phone"></i>
       <% # number: %>
-      918806070  
+      918806070
     </li>
     <li class="desk-feature">
       <i class="far fa-envelope-open"></i>
       <% # email: %>
-      martagaiabras@gmail.com  
+      <% user = User.find_by(params[:user_id]) %>
+      <%= user.email %>
     </li>
     <li class="desk-feature"></li>
   </ul>
@@ -42,16 +43,16 @@
           <h1> Lovely desk in Lisbon  </h1>
           <p> This is an amazing desk in the middle of Lisbon! You can share the desk with 3 other people for just 30€ per week. You also have a parking spot available and free wi-fi!</p>
           <div class="col-md-6">
-            <img src= <%= cl_image_path @desk.photo%> class="image_right" style="width: 300px;">            
+            <img src= <%= cl_image_path @desk.photo%> class="image_right" style="width: 300px;">
           </div>
           <div class="col-md-6">
-           <img src= <%= cl_image_path @desk.photo%> class="image_left" style="width: 300px;">           
+           <img src= <%= cl_image_path @desk.photo%> class="image_left" style="width: 300px;">
          </div>
          <div class="col-md-6">
-          <img src= <%= cl_image_path @desk.photo%> class="image_right" style="width: 300px;">            
+          <img src= <%= cl_image_path @desk.photo%> class="image_right" style="width: 300px;">
         </div>
         <div class="col-md-6">
-         <img src=<%= cl_image_path @desk.photo%> class="image_left" style="width: 300px;">            
+         <img src=<%= cl_image_path @desk.photo%> class="image_left" style="width: 300px;">
        </div>
 
        <div id="map" style="width: 80%; height: 250px; margin-left:30px; margin-top: 30px; margin-bottom: 30px" data-markers="<%= @markers.to_json %>"></div>
@@ -95,7 +96,7 @@
 
 
                          <!--        <div class="col-md-6">
-                                  
+
                                   <div class="check_in">
                                     <input type ="text" class="text" label="Check-in" id="desk_check_in"  placeholder ="Check-in">
                                   </div>
@@ -105,7 +106,7 @@
 
                                   <div class="check_out">
                                     <input type ="text" class="text" label="Check-out" id="desk_check_out" placeholder ="Check-out">
-                                  </div>  
+                                  </div>
 
                                 </div> -->
                               </div>
