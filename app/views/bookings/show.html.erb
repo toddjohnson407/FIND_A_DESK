@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 <body style="background-color: black;">
 
 
@@ -10,3 +11,32 @@
     <%= link_to "Cancel this booking",  desk_booking_path(params[:desk_id], @booking), class: "btn-treehouse", method: :delete, data: { confirm: 'Are you sure?' } %>
 </div>
 </body>
+=======
+<div class="container" style="height: 700px; margin-left: 80px;">
+	<% desk = Desk.find_by(params[:user_id]) %>
+<h1>Welcome! </h1>
+	<p>You have booked <%= desk.name %> from the <%= @booking.start_date.strftime("%d-%m-%Y")%> until <%= @booking.end_date.strftime("%d-%m-%Y") %>!</p>
+</div>
+
+<<<<<<< HEAD
+<<<<<<< HEAD
+=======
+<h2>For: </h2>
+<%= @booking.start_date %>
+<br>
+<h2>To: </h2>
+<%= @booking.end_date %>
+
+=======
+>>>>>>> fe60bc2625b1586fae07edb2a3ef3d43aad30e76
+<% if policy(@booking).destroy? %>
+<br>
+<%= link_to "Cancel this booking",  desk_booking_path(params[:desk_id], @booking), class: "btn-medium", method: :delete, data: { confirm: 'Are you sure?' } %>
+<% end %>
+<br>
+<br>
+<<<<<<< HEAD
+>>>>>>> 993b230c13fa01005834ffc4ca9d25464234d189
+=======
+>>>>>>> fe60bc2625b1586fae07edb2a3ef3d43aad30e76
+>>>>>>> 98f8871a51c87482b8a20811730616facb6f71d9
